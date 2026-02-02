@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="yireo_cleandatabasetables_remove_database_table" xsi:type="object">Yireo\CleanDatabaseTables\Console\Command\RemoveDatabaseTable</item>
+                <item name="yireo_cleandatabasetables_list_database_tables" xsi:type="object">Yireo\CleanDatabaseTables\Console\Command\ListDatabaseTables</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
