@@ -21,6 +21,27 @@ Next, enable this module:
 bin/magento module:enable Yireo_CleanDatabaseTables
 ```
 
+### Usage
+List all tables of the current database:
+```bash
+bin/magento db:table:list
+```
+
+Remove a table:
+```bash
+bin/magento db:table:remove foobar
+```
+
+The table name needs to match a table of the current database exactly (including the table prefix). Names of tables in
+other databases (like `otherdb.foobar`) are refused. Before removing the table, you are asked for confirmation. Tables
+that are declared in the `db_schema.xml` file of an enabled module are refused as well. Use the `--force` (`-f`) option
+to skip the confirmation and to allow removing declared tables (also required when running with `--no-interaction`):
+```bash
+bin/magento db:table:remove foobar --force
+```
+
+Every removal is logged to the Magento system log.
+
 ## Current status
 
 <!-- badges.test.start -->
